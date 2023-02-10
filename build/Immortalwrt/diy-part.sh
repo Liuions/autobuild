@@ -6,9 +6,9 @@
 
 
 # 后台IP设置
-export Ipv4_ipaddr="192.168.2.2"            # 修改openwrt后台地址(填0为关闭)
+export Ipv4_ipaddr="192.168.168.1"            # 修改openwrt后台地址(填0为关闭)
 export Netmask_netm="255.255.255.0"         # IPv4 子网掩码（默认：255.255.255.0）(填0为不作修改)
-export Op_name="OpenWrt-123"                # 修改主机名称为OpenWrt-123(填0为不作修改)
+export Op_name="Liuions"                # 修改主机名称为OpenWrt-123(填0为不作修改)
 
 # 默认主题设置
 export Mandatory_theme="argon"              # 将bootstrap替换您需要的主题为必选主题(可自行更改您要的,源码要带此主题就行,填写名称也要写对) (填写主题名称,填0为不作修改)
@@ -24,7 +24,7 @@ export Create_Ipv6_Lan="0"                  # 爱快+OP双系统时,爱快接管
 
 # IPV6、IPV4 选择
 export Enable_IPV6_function="0"             # 编译IPV6固件(1为启用命令,填0为不作修改)
-export Enable_IPV4_function="0"             # 编译IPV4固件(1为启用命令,填0为不作修改)(如果跟IPV6一起开启的话,优先IPV6功能)
+export Enable_IPV4_function="1"             # 编译IPV4固件(1为启用命令,填0为不作修改)(如果跟IPV6一起开启的话,优先IPV6功能)
 
 # OpenClash
 export OpenClash_branch="master"            # OpenClash代码选择分支（master 或 dev）(填0为不需要此插件)
@@ -34,13 +34,13 @@ export OpenClash_Core="1"                   # 编译固件增加OpenClash时,把
 export Customized_Information="$(TZ=UTC-8 date "+%Y.%m.%d")"  # 个性签名,你想写啥就写啥，(填0为不作修改)
 
 # 更换固件内核
-export Replace_Kernel="0"                    # 更换内核版本,在对应源码的[target/linux/架构]查看patches-x.x,看看x.x有啥就有啥内核了(填入内核版本号,填0为不作修改)
+export Replace_Kernel="5.15"                    # 更换内核版本,在对应源码的[target/linux/架构]查看patches-x.x,看看x.x有啥就有啥内核了(填入内核版本号,填0为不作修改)
 
 # 设置免密码登录(个别源码本身就没密码的)
 export Password_free_login="1"               # 设置首次登录后台密码为空（进入openwrt后自行修改密码）(1为启用命令,填0为不作修改)
 
 # 增加AdGuardHome插件时把核心一起下载好
-export AdGuardHome_Core="0"                  # 编译固件增加AdGuardHome时,把核心下载好,需要注意的是一个核心20多MB的,小闪存机子搞不来(1为启用命令,填0为不需要核心)
+export AdGuardHome_Core="1"                  # 编译固件增加AdGuardHome时,把核心下载好,需要注意的是一个核心20多MB的,小闪存机子搞不来(1为启用命令,填0为不需要核心)
 
 # 其他
 export Ttyd_account_free_login="0"           # 设置ttyd免密登录(1为启用命令,填0为不作修改)
@@ -51,17 +51,17 @@ export Cancel_running="1"                    # 取消路由器每天跑分任务
 
 
 # 修改插件名字
-sed -i 's/"终端"/"TTYD"/g' `egrep "终端" -rl ./`
-sed -i 's/"aMule设置"/"电驴下载"/g' `egrep "aMule设置" -rl ./`
-sed -i 's/"网络存储"/"NAS"/g' `egrep "网络存储" -rl ./`
-sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' `egrep "Turbo ACC 网络加速" -rl ./`
-sed -i 's/"实时流量监测"/"流量"/g' `egrep "实时流量监测" -rl ./`
-sed -i 's/"KMS 服务器"/"KMS激活"/g' `egrep "KMS 服务器" -rl ./`
-sed -i 's/"TTYD 终端"/"命令窗"/g' `egrep "TTYD 终端" -rl ./`
-sed -i 's/"USB 打印服务器"/"打印服务"/g' `egrep "USB 打印服务器" -rl ./`
-sed -i 's/"Web 管理"/"Web管理"/g' `egrep "Web 管理" -rl ./`
-sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
-sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
+#sed -i 's/"终端"/"TTYD"/g' `egrep "终端" -rl ./`
+#sed -i 's/"aMule设置"/"电驴下载"/g' `egrep "aMule设置" -rl ./`
+#sed -i 's/"网络存储"/"NAS"/g' `egrep "网络存储" -rl ./`
+#sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' `egrep "Turbo ACC 网络加速" -rl ./`
+#sed -i 's/"实时流量监测"/"流量"/g' `egrep "实时流量监测" -rl ./`
+#sed -i 's/"KMS 服务器"/"KMS激活"/g' `egrep "KMS 服务器" -rl ./`
+#sed -i 's/"TTYD 终端"/"命令窗"/g' `egrep "TTYD 终端" -rl ./`
+#sed -i 's/"USB 打印服务器"/"打印服务"/g' `egrep "USB 打印服务器" -rl ./`
+#sed -i 's/"Web 管理"/"Web管理"/g' `egrep "Web 管理" -rl ./`
+#sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
+#sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
 
 
 # 整理固件包时候,删除您不想要的固件或者文件,让它不需要上传到Actions空间(根据编译机型变化,自行调整删除名称)
